@@ -27,7 +27,12 @@ class Lembrete(Resource):
         estado = not estado
         return {"caboclo_esqueceu_de_comer_goiabada": estado }, 200
 
-api.add_resource(Lembrete, '/lembretes')
+class Default(Resource):
+    def get(self):
+        return {"default": "test" }, 200
 
-port_from_env = os.environ.get('PORT', 5000)
+api.add_resource(Lembrete, '/lembretes')
+api.add_resource(Default, '/')
+
+port_from_env = int(os.environ.get('PORT', 5000))
 app.run(port=port_from_env)
