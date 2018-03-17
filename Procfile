@@ -1,1 +1,1 @@
-web: python3.6 notifications.py
+web: python notification.py
