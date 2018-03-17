@@ -12,6 +12,7 @@
 #
 #run app using app.run(port=value)
 
+import os
 from flask import Flask
 from flask_restful import Resource, Api
 
@@ -28,4 +29,5 @@ class Lembrete(Resource):
 
 api.add_resource(Lembrete, '/lembretes')
 
-app.run(port=5000)
+port_from_env = os.environ.get('PORT', 5000)
+app.run(port=port_from_env)
