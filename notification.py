@@ -34,5 +34,6 @@ class Default(Resource):
 api.add_resource(Lembrete, '/lembretes')
 api.add_resource(Default, '/')
 
+#if __name__ == '__main__':
 port_from_env = int(os.environ.get('PORT', 5000))
-app.run(host=0.0.0.0, port=port_from_env)
+app.run(host='0.0.0.0', port=port_from_env)
